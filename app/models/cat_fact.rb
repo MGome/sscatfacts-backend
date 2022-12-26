@@ -1,0 +1,2 @@
+class CatFact < ApplicationRecord
+end
