@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: { body: @user }
     else
-      render json: { body: @user.errors.full_messages }
+      render json: { body: { errors: @user.errors.full_messages } }
     end
   end
 end
