@@ -3,6 +3,8 @@ class CatFactsController < ApplicationController
 
   def cat_fact
     response = HTTParty.get('https://catfact.ninja/fact')
+    fact = CatFact.find_or_create_by(description: response['fact'])
+    response['fact_id'] = fact.id
     render json: { body: response }
   end
 
@@ -19,7 +21,7 @@ class CatFactsController < ApplicationController
 
   def like_cat_fact
     user = User.find(params[:user_id])
-    cat_fact = CatFact.find(params[:cat_fact_id])
+    cat_fact = CatFact.find(params[:fact_id])
     new_like = Like.new(user_id: user.id, cat_fact_id: cat_fact.id)
     if new_like.save
       render json: { body: new_like }
