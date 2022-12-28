@@ -41,5 +41,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 4.3.0'
+  gem 'simplecov', '~> 0.21.2', require: false
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
