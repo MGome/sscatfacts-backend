@@ -4,7 +4,9 @@ class UsersController < ApplicationController
     if @user.save
       render json: { body: ActiveSupport::JSON.encode(@user) }, status: :created
     else
-      render json: { body: { errors: @user.errors.full_messages } }, status: :bad_request
+      return render json: { errors: 'Ingresa un nombre válido' }, status: :bad_request if params[:username].blank?
+
+      render json: { errors: 'Nombre de usuario en uso' }, status: :bad_request
     end
   end
 
