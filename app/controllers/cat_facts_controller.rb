@@ -5,6 +5,7 @@ class CatFactsController < ApplicationController
     response = HTTParty.get('https://catfact.ninja/fact')
     fact = CatFact.find_or_create_by(description: response['fact'])
     response['fact_id'] = fact.id
+    response['liked_fact'] = User.find(params[:user_id]).cat_facts.where(id: fact.id).present?
     render json: { body: response }
   end
 
