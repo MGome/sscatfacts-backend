@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :user do
-    username { "sample-user #{rand(1000000000)}" }
+    username { "sample-user #{rand(1_000_000_000)}" }
   end
 end
