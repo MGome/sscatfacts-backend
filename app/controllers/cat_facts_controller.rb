@@ -12,7 +12,7 @@ class CatFactsController < ApplicationController
   end
 
   def liked_cat_facts
-    return render json: default_error_message, status: :bad_request unless params[:id].is_a? Integer
+    return render json: default_error_message, status: :bad_request unless params[:id]
 
     user = User.find(params[:id])
     liked_facts = user.cat_facts.select('id', 'description')
