@@ -34,6 +34,13 @@ RSpec.describe 'CatFacts', type: :request do # rubocop:disable Metrics/BlockLeng
     end
   end
 
+  context 'when request is GET cat_facts#popular_cat_facts' do
+    it 'should respond ok status code' do
+      get popular_cat_facts_path
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   # context 'when request is GET users#find_user with correct params' do
   #   let!(:new_user) { create(:user) }
 
