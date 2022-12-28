@@ -20,14 +20,19 @@ RSpec.describe 'CatFacts', type: :request do # rubocop:disable Metrics/BlockLeng
     end
   end
 
-  # context 'when request is GET cat_facts#liked_cat_facts' do
-  #   let!(:new_user) { create(:user) }
+  context 'when request is GET cat_facts#liked_cat_facts' do
+    let!(:new_user) { create(:user) }
+    let!(:new_cat_fact) { create(:cat_fact) }
 
-  #   it 'should not increment users count and respond bad request status code' do
-  #     expect { post create_user_path }.to change(User, :count).by(0)
-  #     expect(response).to have_http_status(:bad_request)
-  #   end
-  # end
+    before do 
+      post like_cat_fact_path, params: { user_id: new_user.id, fact_id: new_cat_fact.id }
+    end
+
+    it 'should find one liked cat fact and respond ok status code' do
+      get liked_cat_facts_path(id: new_user.id)
+      expect(response).to have_http_status(:ok)
+    end
+  end
 
   # context 'when request is GET users#find_user with correct params' do
   #   let!(:new_user) { create(:user) }
