@@ -21,7 +21,9 @@ gem 'puma', '~> 5.0'
 
 # Manually added gems
 gem 'httparty', '~> 0.13.7'
-gem 'rubocop-rails', require: false
+gem 'rubocop',       '~> 0.81.0'
+gem 'rubocop-rails', '~> 2.5.2'
+gem 'rubocop-rspec', '~> 1.38.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
