@@ -51,7 +51,7 @@ RSpec.describe 'CatFacts', type: :request do # rubocop:disable Metrics/BlockLeng
     let!(:new_user) { create(:user) }
     let!(:new_cat_fact) { create(:cat_fact) }
 
-    before do 
+    before do
       post like_cat_fact_path, params: { user_id: new_user.id, fact_id: new_cat_fact.id }
     end
 
