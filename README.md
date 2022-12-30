@@ -47,3 +47,22 @@ Para la ejecución de los tests debes ejecutar el comando:
 ```
 bundle exec rspec
 ```
+---
+## Uso de docker
+Para utilizar docker debes cambiar las siguientes credenciales del archivo ```database.yml```:
+```
+host: db
+username: postgres
+password: password
+```
+Mientras que el archivo ```docker-compose.yml``` debes ubicarlo en la carpeta raíz que contiene tanto el backend como el frontend.
+Luego, debes ejecutar la siguiente secuencia de comandos:
+```
+docker-compose build
+docker-compose run api rake db:create 
+docker-compose run api rake db:migrate 
+docker-compose run web rake db:create
+docker-compose run web rake db:migrate
+docker-compose up
+```
+Y listo! Ya podrás utilizar SSCatFacts.
