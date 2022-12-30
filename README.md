@@ -1,4 +1,4 @@
-# Pelea de personajes
+# SSCatFacts Backend
 ### by Mario Gómez - { bigMario } :ghost:
 ---
 ## Setup inicial :rocket:
@@ -31,7 +31,7 @@ El diagrama UML del sistema, correspondiente al modelo de datos de la aplicació
 ---
 ## Metodología de trabajo
 1) El diseño del software está basado en las prácticas de SOLID.
-2) La convención de manejo de ramas se realizó a través de Git Flow siguiendo la convención de ramas y nombres de commits de [DeepSource](https://deepsource.io/blog/git-branch-naming-conventions/). El diagrama del flujo de ramas se puede encontrar en el siguiente [enlace](https://drive.google.com/file/d/1UQ8aWmhsYzC5CyZR3vTyMguNw0RE3iDG/view?usp=sharing).
+2) La convención de manejo de ramas se realizó a través de Git Flow siguiendo la convención de ramas y nombres de commits de [DeepSource](https://deepsource.io/blog/git-branch-naming-conventions/). El diagrama del flujo de ramas se puede encontrar en el siguiente [enlace](https://github.com/MGome/sscatfacts-backend/network).
 
 
 ---
